@@ -935,8 +935,7 @@ class StudentUSocket(StudentUSocketBase):
       self.tx(p, retxed=True)
 
       ## Start of Stage 9.3 ##
-      self.rto *= 2
-      self.rto = min(self.rto, self.MAX_RTO)
+      self.rto = min(self.rto * 2, self.MAX_RTO)
       ## End of Stage 9.3 ##
 
   def set_pending_ack(self):
